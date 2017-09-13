@@ -69,7 +69,7 @@ namespace ChatServer
                         }
                         else
                         {
-                            sW.WriteLine("gavel,Aktionen er slut");
+                            sW.WriteLine("Gavel,Aktionen er slut");
                         }
                     }
                     else if (messageArray[0] == "StartUp")
