@@ -7,6 +7,7 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 
+
 namespace ChatServer
 {
     class Program
@@ -19,7 +20,8 @@ namespace ChatServer
 
         public void Run()
         {
-
+            
+            Auktion auktion = new Auktion();
             TcpListener listener = new TcpListener(IPAddress.Any, 11000);
             listener.Start();
             TcpClient newClient;
@@ -29,7 +31,7 @@ namespace ChatServer
             {
                 newClient = listener.AcceptTcpClient();
                 Console.WriteLine("Client Connected !");
-                clientHandler = new ClientHandler(newClient);
+                clientHandler = new ClientHandler(newClient, auktion);
                 BroadCasting.AddToList(clientHandler);
                                
 
