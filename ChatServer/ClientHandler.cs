@@ -70,6 +70,7 @@ namespace ChatServer
                         else
                         {
                             sW.WriteLine("Gavel,Aktionen er slut");
+                            sW.Flush();
                         }
                     }
                     else if (messageArray[0] == "StartUp")
